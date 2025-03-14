@@ -40,10 +40,10 @@ class UserRegistrationView(TitleMixin, SuccessMessageMixin, CreateView):
     model = User
     form_class = UserRegistrationForm
     template_name = 'users/registration.html'
-    title = 'Store - Регистрация'
     # Kuda otpravit potom
     success_url = reverse_lazy('users:login')
     success_message = 'Регистрация прошла успешно!!'
+    title = 'Store - Регистрация'
 
 # def registration(request):
 #     if request.method == 'POST':
