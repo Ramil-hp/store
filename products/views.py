@@ -29,24 +29,6 @@ class ProductsListView(TitleMixin, ListView):
         context['categories']= ProductCategory.objects.all()
         return context
 
-# def index(request):
-#     contex = {
-#         'title': 'Store'
-#     }
-#     return render(request, 'products/index.html')
-#это вбюха в фунции
-# def products(request,category_id= None, page_number =1):
-#
-#     products = Product.objects.filter(category_id = category_id) if category_id else Product.objects.all()
-#     per_page = 3
-#     paginator = Paginator(products, per_page)
-#     products_paginator = paginator.page(page_number)
-#     context = {'title': 'Store - Каталог',
-#                'categories': ProductCategory.objects.all(),
-#                'products': products_paginator
-#                }
-#     return render(request, 'products/products.html',context)
-
 @login_required
 def basket_add(request, product_id):
     product = Product.objects.get(id=product_id)
